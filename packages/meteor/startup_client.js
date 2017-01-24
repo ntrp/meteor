@@ -37,30 +37,9 @@ var loadingCompleted = function () {
     isLoadingCompleted = true;
     maybeReady();
   }
-}
+};
 
-if (Meteor.isCordova) {
-  holdReady();
-  document.addEventListener('deviceready', releaseReadyHold, false);
-}
-
-if (document.readyState === 'complete' || document.readyState === 'loaded') {
-  // Loading has completed,
-  // but allow other scripts the opportunity to hold ready
-  window.setTimeout(loadingCompleted);
-} else { // Attach event listeners to wait for loading to complete
-  if (document.addEventListener) {
-    document.addEventListener('DOMContentLoaded', loadingCompleted, false);
-    window.addEventListener('load', loadingCompleted, false);
-  } else { // Use IE event model for < IE9
-    document.attachEvent('onreadystatechange', function () {
-      if (document.readyState === "complete") {
-        loadingCompleted();
-      }
-    });
-    window.attachEvent('load', loadingCompleted);
-  }
-}
+setTimeout(loadingCompleted);
 
 /**
  * @summary Run code when a client or a server starts.

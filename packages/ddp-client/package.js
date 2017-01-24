@@ -25,7 +25,8 @@ Package.onUse(function (api) {
   // _idParse, _idStringify.
   api.use('mongo-id', ['client', 'server']);
 
-  api.addFiles(['sockjs-0.3.4.js', 'stream_client_sockjs.js'], 'client');
+  //api.addFiles(['sockjs-0.3.4.js', 'stream_client_sockjs.js'], 'client');
+  api.addFiles('stream_client_nativescript.js', 'client');
   api.addFiles('stream_client_nodejs.js', 'server');
   api.addFiles('stream_client_common.js', ['client', 'server']);
 
