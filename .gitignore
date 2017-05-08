@@ -21,3 +21,7 @@ npm-debug.log
 universe
 .babel-cache
 mongo-test-output
+_BUNDLE
+_GENERATOR_PRJ
+_GENERATOR_PRJ_DIST
+
