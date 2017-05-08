@@ -19,9 +19,12 @@ underscore
 ddp
 mongo
 tracker
+accounts-base
+accounts-password
 EOT
 
 ../meteor build --debug --directory ${GPDPATH}
+# meteor build requires a different import to be successful than the one needed from nativescript to run
 sed -i -r "s/Npm\.require\('faye-websocket'\).Client/require\('nativescript-websockets'\)/" ${PKGPATH}/ddp-client.js
 
 cp "${PKGPATH}/underscore.js" ${OUT}
@@ -50,4 +53,12 @@ cp "${PKGPATH}/geojson-utils.js" ${OUT}
 cp "${PKGPATH}/minimongo.js" ${OUT}
 cp "${PKGPATH}/allow-deny.js" ${OUT}
 cp "${PKGPATH}/mongo.js" ${OUT}
+cp "${PKGPATH}/localstorage.js" ${OUT}
+cp "${PKGPATH}/callback-hook.js" ${OUT}
+cp "${PKGPATH}/reactive-var.js" ${OUT}
+cp "${PKGPATH}/accounts-base.js" ${OUT}
+cp "${PKGPATH}/sha.js" ${OUT}
+cp "${PKGPATH}/srp.js" ${OUT}
+cp "${PKGPATH}/accounts-password.js" ${OUT}
 cp "${PKGPATH}/global-imports.js" ${OUT}
+cp "${PKGPATH}/service-configuration.js" ${OUT}
