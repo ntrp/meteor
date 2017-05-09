@@ -1,5 +1,4 @@
 import {AccountsClient} from "./accounts_client.js";
-import {AccountsTest} from "./url_client.js";
 import "./localstorage_token.js";
 
 /**

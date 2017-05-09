@@ -25,7 +25,7 @@ EOT
 
 ../meteor build --debug --directory ${GPDPATH}
 # meteor build requires a different import to be successful than the one needed from nativescript to run
-sed -i -r "s/Npm\.require\('faye-websocket'\).Client/require\('nativescript-websockets'\)/" ${PKGPATH}/ddp-client.js
+sed -i -r "s/Npm\.require\('faye-websocket'\).Client/__meteor_runtime_config__.wsImpl/" ${PKGPATH}/ddp-client.js
 
 cp "${PKGPATH}/underscore.js" ${OUT}
 cp "${PKGPATH}/meteor.js" ${OUT}

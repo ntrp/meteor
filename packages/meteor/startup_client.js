@@ -47,21 +47,9 @@ setTimeout(loadingCompleted);
  * @param {Function} func A function to run on startup.
  */
 Meteor.startup = function (callback) {
-  // Fix for < IE9, see http://javascript.nwbox.com/IEContentLoaded/
-  var doScroll = !document.addEventListener &&
-    document.documentElement.doScroll;
 
-  if (!doScroll || window !== top) {
     if (isReady)
       callback();
     else
       callbackQueue.push(callback);
-  } else {
-    try { doScroll('left'); }
-    catch (error) {
-      setTimeout(function () { Meteor.startup(callback); }, 50);
-      return;
-    };
-    callback();
-  }
 };

@@ -23,9 +23,6 @@ export class AccountsClient extends AccountsCommon {
     this._pageLoadLoginCallbacks = [];
     this._pageLoadLoginAttemptInfo = null;
 
-    // Defined in url_client.js.
-    this._initUrlMatching();
-
     // Defined in localstorage_token.js.
     this._initLocalStorage();
 
