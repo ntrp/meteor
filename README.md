@@ -1,3 +1,6 @@
+Modified version for the project [nativescript-meteor-client](https://github.com/ntrp/nativescript-meteor-client). The code has
+been adapted to generate a DOM agnostic client, the websocket implementation need to be injected.
+
 # Meteor
 
 [![TravisCI Status](https://travis-ci.org/meteor/meteor.svg?branch=devel)](https://travis-ci.org/meteor/meteor)

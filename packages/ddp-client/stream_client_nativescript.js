@@ -185,9 +185,9 @@ LivedataTest.ClientStream = class ClientStream {
     });
 
 
-    clientOnIfCurrent('message', 'stream message callback', function (message) {
+    clientOnIfCurrent('message', 'stream message callback', function (socket, message) {
       // Ignore binary frames, where message.data is a Buffer
-      if (typeof message.data !== "string")
+      if (typeof message !== "string")
         return;
 
       if (__meteor_runtime_config__.nsDebug) {
@@ -195,7 +195,7 @@ LivedataTest.ClientStream = class ClientStream {
       }
 
       _.each(self.eventCallbacks.message, function (callback) {
-        callback(message.data);
+        callback(message);
       });
     });
     // open connection
